@@ -63,6 +63,22 @@ namespace CentroBiblicoCharis.Registros
             {
                 MontoTextBox.Text = dt.Rows[2]["Monto"].ToString();
             }
+            if (GrupoComboBox.SelectedIndex == 3)
+            {
+                MontoTextBox.Text = dt.Rows[3]["Monto"].ToString();
+            }
+            if (GrupoComboBox.SelectedIndex == 4)
+            {
+                MontoTextBox.Text = dt.Rows[4]["Monto"].ToString();
+            }
+            if (GrupoComboBox.SelectedIndex == 5)
+            {
+                MontoTextBox.Text = dt.Rows[5]["Monto"].ToString();
+            }
+            if (GrupoComboBox.SelectedIndex == 6)
+            {
+                MontoTextBox.Text = dt.Rows[6]["Monto"].ToString();
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

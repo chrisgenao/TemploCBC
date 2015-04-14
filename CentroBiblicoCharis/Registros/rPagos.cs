@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using CrystalDecisions.CrystalReports;
+using CrystalDecisions;
 
 namespace CentroBiblicoCharis.Registros
 {
@@ -15,6 +17,8 @@ namespace CentroBiblicoCharis.Registros
     {
         private Personas Persona = new Personas();
         private Etapas Etapa = new Etapas();
+        private Pagos Pago = new Pagos();
+        private Reportes.iPagos iPago = new Reportes.iPagos();
 
         DataTable dt = new DataTable();
         public rPagos()
@@ -82,6 +86,7 @@ namespace CentroBiblicoCharis.Registros
                 Persona.Balance = x - y;
                 paso = true;
                 Persona.ModificarPago(Convert.ToInt32(IDTextBox.Text));
+                Pago.Insertar(Convert.ToInt32(IDTextBox.Text),NombreTextBox.Text,Convert.ToInt32(PagaraTextBox.Text), Persona.Balance);
 
             }
             if (paso)
@@ -92,7 +97,8 @@ namespace CentroBiblicoCharis.Registros
                 Etapa.AfectarBalance(1, Convert.ToDouble(PagaraTextBox.Text));
                 PagaraTextBox.Clear();
                 ActualizarComboBox();
-                MessageBox.Show("Pago Realizado");
+                MessageBox.Show("Pago Realizado, Procederemos a Imprimir.");
+                iPago.ShowDialog();
                 //todo: Imprimir Factura.
             }
             else
@@ -122,6 +128,25 @@ namespace CentroBiblicoCharis.Registros
             PersonaComboBox.DataSource = Persona.Listar("IdPersona, Nombre", "Balance>0");
             PersonaComboBox.ValueMember = "IdPersona";
             PersonaComboBox.DisplayMember = "Nombre";
+        }
+
+        private void ImprimirDocumento()
+        {
+     //  CrystalDecisions.Shared.ParameterValues RpDatos;
+     //  CrystalDecisions.Shared.ParameterDiscreteValue DsFecha; 
+     //  CrystalDecisions.Shared.ParameterDiscreteValue DsNombre;
+
+       // DsFecha.Value = DateTime.Today;
+       // DsNombre.Value = NombreTextBox.Text.ToString();
+       //
+       // RpDatos.Add(DsFecha);
+       // Reportes.CrystalReport1.DataDefinition.ParameterFields("ParametroFecha").ApplyCurrentValues(RpDatos);
+        //RpDatos.Clear();
+        
+    //    RpDatos.Add(DsNombre)
+    //    MyReport.DataDefinition.ParameterFields("ParametroNombre").ApplyCurrentValues(RpDatos)
+    //    RpDatos.Clear()
+
         }
     }
 }

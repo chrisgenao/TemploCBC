@@ -42,6 +42,7 @@
     <Compile Include="Celulas.cs" />
     <Compile Include="Etapas.cs" />
     <Compile Include="Grupos.cs" />
+    <Compile Include="Pagos.cs" />
     <Compile Include="Personas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuarios.cs" />

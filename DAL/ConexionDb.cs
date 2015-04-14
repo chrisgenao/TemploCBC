@@ -63,6 +63,8 @@ namespace DAL
 
             try
             {
+                
+                
                 Conexion.Open(); // abrimos la conexion
                 Adapter = new SqlDataAdapter(ComandoSql, Conexion);
 
