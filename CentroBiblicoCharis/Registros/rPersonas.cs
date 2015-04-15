@@ -37,7 +37,7 @@ namespace CentroBiblicoCharis.Registros
         private void rPersonas_Load(object sender, EventArgs e)
         {
             dt = Grupo.Listar("Monto", "1=1");
-
+            FormaPagoComboBox.SelectedIndex = 0;
             GrupoComboBox.DataSource = Grupo.Listar("IdGrupo, Nombre", "1=1");
             GrupoComboBox.ValueMember = "IdGrupo";
             GrupoComboBox.DisplayMember = "Nombre";
@@ -96,10 +96,6 @@ namespace CentroBiblicoCharis.Registros
                 errorProvider2.SetError(CedulaTextBox,"Debe llenar esta casilla");
             }
 
-            if (FormaPagoTextBox.Text.Trim().Length == 0)
-            {
-                Utilitarios.ValidarTextBoxVacio(FormaPagoTextBox, errorProvider1, "Por favor, Llena esta casilla.");
-            }
             else
             {
 
@@ -108,7 +104,7 @@ namespace CentroBiblicoCharis.Registros
                 Persona.Celula = CelulaComboBox.SelectedValue.ToString();
                 Persona.Cedula = CedulaTextBox.Text;
                 Persona.Grupo = Convert.ToInt32(GrupoComboBox.SelectedValue);
-                Persona.FormaPago = FormaPagoTextBox.Text;
+                Persona.FormaPago = FormaPagoComboBox.SelectedItem.ToString();
                 Persona.Balance = Convert.ToInt32(MontoTextBox.Text.ToString());
 
                 errorProvider1.Clear();
@@ -150,7 +146,7 @@ namespace CentroBiblicoCharis.Registros
             CelulaComboBox.SelectedIndex = 0;
             CedulaTextBox.ResetText();
             GrupoComboBox.SelectedIndex = 0;
-            FormaPagoTextBox.Clear();
+            FormaPagoComboBox.SelectedIndex = 0;
         }
 
         private void BorrarButton_Click(object sender, EventArgs e)
@@ -170,6 +166,11 @@ namespace CentroBiblicoCharis.Registros
             this.Hide();
             rPagos rPago = new rPagos();
             rPago.ShowDialog();
+        }
+
+        private void FormaPagoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

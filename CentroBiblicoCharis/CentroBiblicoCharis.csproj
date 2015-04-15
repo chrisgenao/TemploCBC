@@ -72,6 +72,12 @@
     <Compile Include="Consultas\cBalance.Designer.cs">
       <DependentUpon>cBalance.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\cPersonas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cPersonas.Designer.cs">
+      <DependentUpon>cPersonas.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <Compile Include="Utilitarios.cs" />
     <EmbeddedResource Include="Consultas\cBalance.resx">
       <DependentUpon>cBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cPersonas.resx">
+      <DependentUpon>cPersonas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginUI.resx">
       <DependentUpon>LoginUI.cs</DependentUpon>

@@ -37,7 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.FormaPagoTextBox = new System.Windows.Forms.TextBox();
+            this.MontoTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.CelulaComboBox = new System.Windows.Forms.ComboBox();
             this.CedulaTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -51,7 +51,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.SiguienteButton = new System.Windows.Forms.Button();
-            this.MontoTextBox = new System.Windows.Forms.TextBox();
+            this.FormaPagoComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -114,8 +114,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.FormaPagoComboBox);
             this.groupBox1.Controls.Add(this.MontoTextBox);
-            this.groupBox1.Controls.Add(this.FormaPagoTextBox);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.CelulaComboBox);
             this.groupBox1.Controls.Add(this.CedulaTextBox);
@@ -137,12 +137,13 @@
             this.groupBox1.Text = "Credenciales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // FormaPagoTextBox
+            // MontoTextBox
             // 
-            this.FormaPagoTextBox.Location = new System.Drawing.Point(140, 146);
-            this.FormaPagoTextBox.Name = "FormaPagoTextBox";
-            this.FormaPagoTextBox.Size = new System.Drawing.Size(126, 20);
-            this.FormaPagoTextBox.TabIndex = 21;
+            this.MontoTextBox.Location = new System.Drawing.Point(140, 172);
+            this.MontoTextBox.Name = "MontoTextBox";
+            this.MontoTextBox.ReadOnly = true;
+            this.MontoTextBox.Size = new System.Drawing.Size(126, 20);
+            this.MontoTextBox.TabIndex = 23;
             // 
             // label8
             // 
@@ -270,13 +271,22 @@
             this.SiguienteButton.UseVisualStyleBackColor = true;
             this.SiguienteButton.Click += new System.EventHandler(this.SiguienteButton_Click);
             // 
-            // MontoTextBox
+            // FormaPagoComboBox
             // 
-            this.MontoTextBox.Location = new System.Drawing.Point(140, 172);
-            this.MontoTextBox.Name = "MontoTextBox";
-            this.MontoTextBox.ReadOnly = true;
-            this.MontoTextBox.Size = new System.Drawing.Size(126, 20);
-            this.MontoTextBox.TabIndex = 23;
+            this.FormaPagoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FormaPagoComboBox.FormattingEnabled = true;
+            this.FormaPagoComboBox.Items.AddRange(new object[] {
+            "Semanal",
+            "Quincenal",
+            "Mensual",
+            "Trimestral",
+            "Semestral",
+            "A termino"});
+            this.FormaPagoComboBox.Location = new System.Drawing.Point(140, 146);
+            this.FormaPagoComboBox.Name = "FormaPagoComboBox";
+            this.FormaPagoComboBox.Size = new System.Drawing.Size(99, 21);
+            this.FormaPagoComboBox.TabIndex = 24;
+            this.FormaPagoComboBox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoComboBox_SelectedIndexChanged);
             // 
             // rPersonas
             // 
@@ -322,10 +332,10 @@
         private System.Windows.Forms.ComboBox CelulaComboBox;
         private System.Windows.Forms.MaskedTextBox CedulaTextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox FormaPagoTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.Button SiguienteButton;
         private System.Windows.Forms.TextBox MontoTextBox;
+        private System.Windows.Forms.ComboBox FormaPagoComboBox;
     }
 }

@@ -72,5 +72,11 @@ namespace CentroBiblicoCharis
             Consultas.cBalance cBalance = new Consultas.cBalance();
             cBalance.ShowDialog();
         }
+
+        private void personaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cPersonas cPersona = new Consultas.cPersonas();
+            cPersona.ShowDialog();
+        }
     }
 }
