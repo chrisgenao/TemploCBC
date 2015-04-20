@@ -116,10 +116,15 @@
     <Compile Include="Reportes\iPagos.Designer.cs">
       <DependentUpon>iPagos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\Reportes.cs">
+    <Compile Include="Reportes\myDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Reportes.rpt</DependentUpon>
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReporteTest1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteTest1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilitarios.cs" />
@@ -156,9 +161,9 @@
     <EmbeddedResource Include="Reportes\iPagos.resx">
       <DependentUpon>iPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\Reportes.rpt">
+    <EmbeddedResource Include="Reportes\ReporteTest1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Reportes.cs</LastGenOutput>
+      <LastGenOutput>ReporteTest1.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,6 +174,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Reportes\myDataSet.xsc">
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\myDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>myDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\myDataSet.xss">
+      <DependentUpon>myDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

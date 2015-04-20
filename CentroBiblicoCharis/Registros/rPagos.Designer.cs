@@ -49,9 +49,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.PagaraTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.GuardarButton = new System.Windows.Forms.Button();
             this.LimpiarButton = new System.Windows.Forms.Button();
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -226,6 +226,7 @@
             this.PagaraTextBox.Name = "PagaraTextBox";
             this.PagaraTextBox.Size = new System.Drawing.Size(100, 20);
             this.PagaraTextBox.TabIndex = 14;
+            this.PagaraTextBox.TextChanged += new System.EventHandler(this.PagaraTextBox_TextChanged);
             // 
             // groupBox2
             // 
@@ -242,9 +243,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Registrar Pago";
             // 
-            // errorProvider1
+            // LimpiarButton
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.LimpiarButton.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButton.Image")));
+            this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LimpiarButton.Location = new System.Drawing.Point(6, 116);
+            this.LimpiarButton.Name = "LimpiarButton";
+            this.LimpiarButton.Size = new System.Drawing.Size(137, 47);
+            this.LimpiarButton.TabIndex = 17;
+            this.LimpiarButton.Text = "Limpiar";
+            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
             // 
             // GuardarButton
             // 
@@ -259,18 +269,9 @@
             this.GuardarButton.UseVisualStyleBackColor = true;
             this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // LimpiarButton
+            // errorProvider1
             // 
-            this.LimpiarButton.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButton.Image")));
-            this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LimpiarButton.Location = new System.Drawing.Point(6, 116);
-            this.LimpiarButton.Name = "LimpiarButton";
-            this.LimpiarButton.Size = new System.Drawing.Size(137, 47);
-            this.LimpiarButton.TabIndex = 17;
-            this.LimpiarButton.Text = "Limpiar";
-            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LimpiarButton.UseVisualStyleBackColor = true;
-            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
+            this.errorProvider1.ContainerControl = this;
             // 
             // rPagos
             // 

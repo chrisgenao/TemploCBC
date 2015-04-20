@@ -16,7 +16,7 @@ namespace CentroBiblicoCharis.Registros
         private Grupos Grupo = new Grupos();
         private Celulas Celula = new Celulas();
         private Personas Persona = new Personas();
-        DataTable dt = new DataTable(); 
+        DataTable dt = new DataTable();
 
 
         public rPersonas()
@@ -93,7 +93,7 @@ namespace CentroBiblicoCharis.Registros
 
             if (CedulaTextBox.MaskFull == false)
             {
-                errorProvider2.SetError(CedulaTextBox,"Debe llenar esta casilla");
+                errorProvider2.SetError(CedulaTextBox, "Debe llenar esta casilla");
             }
 
             else
@@ -172,5 +172,41 @@ namespace CentroBiblicoCharis.Registros
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+
+            result = DialogResult.Ignore;
+
+            if (Utilitarios.ToInt(IDTextBox.Text) == 0)
+            {
+                Consultas.cPersonas cPersona = new Consultas.cPersonas();
+
+                result = cPersona.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    IDTextBox.Text = cPersona.DatoEncontrado.ToString();
+                }
+                else
+                {
+                    IDTextBox.Clear();
+                }
+                if (Persona.Buscar(Utilitarios.ToInt(IDTextBox.Text)))
+                {
+                    if (Persona.Celula == "Andy Caceres")
+                    {
+                        IDTextBox.Text = Persona.IdPersona.ToString();
+                        NombreTextBox.Text = Persona.Nombre.ToString();
+                        CelulaComboBox.SelectedIndex = 0;
+                        CedulaTextBox.Text = Persona.Cedula;
+                        GrupoComboBox.SelectedIndex = Persona.Grupo;
+
+                        }
+                }
+            }
+        }
     }
 }
+

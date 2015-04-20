@@ -84,7 +84,7 @@ namespace BLL
             bool Encontro = false;
             DataTable dt = new DataTable();
 
-            dt = this.Listar("Nombre", "IdPersona = " + IdBuscado);
+            dt = this.Listar("Nombre, Cedula, Celula, Grupo, FormaPago, Balance", "IdPersona = " + IdBuscado);
 
             if (dt.Rows.Count > 0)
             {

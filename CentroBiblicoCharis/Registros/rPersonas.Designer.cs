@@ -37,6 +37,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.FormaPagoComboBox = new System.Windows.Forms.ComboBox();
             this.MontoTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.CelulaComboBox = new System.Windows.Forms.ComboBox();
@@ -51,7 +52,6 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.SiguienteButton = new System.Windows.Forms.Button();
-            this.FormaPagoComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -137,6 +137,23 @@
             this.groupBox1.Text = "Credenciales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // FormaPagoComboBox
+            // 
+            this.FormaPagoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FormaPagoComboBox.FormattingEnabled = true;
+            this.FormaPagoComboBox.Items.AddRange(new object[] {
+            "Semanal",
+            "Quincenal",
+            "Mensual",
+            "Trimestral",
+            "Semestral",
+            "A termino"});
+            this.FormaPagoComboBox.Location = new System.Drawing.Point(140, 146);
+            this.FormaPagoComboBox.Name = "FormaPagoComboBox";
+            this.FormaPagoComboBox.Size = new System.Drawing.Size(99, 21);
+            this.FormaPagoComboBox.TabIndex = 24;
+            this.FormaPagoComboBox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoComboBox_SelectedIndexChanged);
+            // 
             // MontoTextBox
             // 
             this.MontoTextBox.Location = new System.Drawing.Point(140, 172);
@@ -183,6 +200,7 @@
             this.button4.Size = new System.Drawing.Size(31, 29);
             this.button4.TabIndex = 14;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // GrupoComboBox
             // 
@@ -270,23 +288,6 @@
             this.SiguienteButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.SiguienteButton.UseVisualStyleBackColor = true;
             this.SiguienteButton.Click += new System.EventHandler(this.SiguienteButton_Click);
-            // 
-            // FormaPagoComboBox
-            // 
-            this.FormaPagoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.FormaPagoComboBox.FormattingEnabled = true;
-            this.FormaPagoComboBox.Items.AddRange(new object[] {
-            "Semanal",
-            "Quincenal",
-            "Mensual",
-            "Trimestral",
-            "Semestral",
-            "A termino"});
-            this.FormaPagoComboBox.Location = new System.Drawing.Point(140, 146);
-            this.FormaPagoComboBox.Name = "FormaPagoComboBox";
-            this.FormaPagoComboBox.Size = new System.Drawing.Size(99, 21);
-            this.FormaPagoComboBox.TabIndex = 24;
-            this.FormaPagoComboBox.SelectedIndexChanged += new System.EventHandler(this.FormaPagoComboBox_SelectedIndexChanged);
             // 
             // rPersonas
             // 

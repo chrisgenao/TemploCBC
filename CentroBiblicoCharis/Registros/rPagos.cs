@@ -148,5 +148,10 @@ namespace CentroBiblicoCharis.Registros
     //    RpDatos.Clear()
 
         }
+
+        private void PagaraTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
