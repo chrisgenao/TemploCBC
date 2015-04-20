@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CentroBiblicoCharis.Properties {
+namespace DAL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -23,14 +23,17 @@ namespace CentroBiblicoCharis.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=|DataDirectory|\\Database\\CentroBibli" +
-            "coCharisDb.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string DataBase {
+        [global::System.Configuration.DefaultSettingValueAttribute("@\"Data Source=(LocalDB)\\v11.0;AttachDbFilename=\"\"C:\\Users\\Christopher\\documents\\v" +
+            "isual studio 2013\\Projects\\CentroBiblicoCharis\\CentroBiblicoCharis\\Database\\Cent" +
+            "roBiblicoCharisDb.mdf\"\";Integrated Security=True\"")]
+        public string ConnectionString {
             get {
-                return ((string)(this["DataBase"]));
+                return ((string)(this["ConnectionString"]));
+            }
+            set {
+                this["ConnectionString"] = value;
             }
         }
     }
