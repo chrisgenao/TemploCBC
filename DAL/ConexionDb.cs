@@ -13,7 +13,7 @@ namespace DAL
     /// </summary>
     public class ConexionDb
     {
-        //Para DB dentro del proyecto: SqlConnection Conexion = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=FinanzasPersonalesDB;Integrated Security=True");
+        //SqlConnection Conexion = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\Database\CentroBiblicoCharisDb.mdf;Integrated Security=True;Connect Timeout=30");
 
         SqlConnection Conexion = new SqlConnection(@"Data Source=.\sqlexpress;Initial Catalog=CentroBiblicoCharisDB;Integrated Security=True");
 

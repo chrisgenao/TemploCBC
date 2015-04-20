@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using BLL;
 
+//todo: Terminar Consultas (ingresos, promesas) tablas e lo demas.
+
 namespace CentroBiblicoCharis.Reportes
 {
     public partial class iPagos : Form
@@ -24,12 +26,7 @@ namespace CentroBiblicoCharis.Reportes
 
         private void iPagos_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
-            DataSet ds = new DataSet("Pagos");
-            dt = Pago.ListarPago();
-            ds.Tables.Add(dt);
-            ds.WriteXmlSchema("Ejemplo1.xml");
+            Reportes1.Refresh();
         }
-
     }
 }
