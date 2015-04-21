@@ -7,21 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using BLL;
 
-namespace CentroBiblicoCharis.Reportes
+namespace CentroBiblicoCharis.Reportes.Imprimir.Ingresos
 {
-    public partial class iPagos : Form
+    public partial class Ingresos : Form
     {
-        public iPagos()
+        public Ingresos()
         {
             InitializeComponent();
         }
 
-        private void iPagos_Load(object sender, EventArgs e)
+        private void crystalReportViewer1_Load(object sender, EventArgs e)
         {
-            Reportest1.Refresh();
+
         }
     }
 }

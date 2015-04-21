@@ -112,5 +112,17 @@ namespace CentroBiblicoCharis
             Consultas.cUsuarios cUsuario = new Consultas.cUsuarios();
             cUsuario.ShowDialog();
         }
+
+        private void personasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.Imprimir.Personas.Personas Persona = new Reportes.Imprimir.Personas.Personas();
+            Persona.ShowDialog();
+        }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.Imprimir.Ingresos.Ingresos Ingreso = new Reportes.Imprimir.Ingresos.Ingresos();
+            Ingreso.ShowDialog();
+        }
     }
 }

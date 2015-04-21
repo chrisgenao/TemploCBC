@@ -15,6 +15,7 @@ namespace CentroBiblicoCharis.Consultas
     {
         private Etapas Etapa = new Etapas();
         private Ingresos Ingreso = new Ingresos();
+        private Personas Persona = new Personas();
 
         public cBalance()
         {
@@ -44,14 +45,20 @@ namespace CentroBiblicoCharis.Consultas
         {
             DataTable dt1 = new DataTable();
             dt1 = Ingreso.Listar("*", "1=1");
+            DataTable dt2 = new DataTable();
+            dt2 = Persona.Listar("IdPersona, Nombre, Balance, Fecha", "1=1");
             DataTable dt3 = new DataTable();
             dt3 = Etapa.ListarEtapa("MontoPendiente", "1");
             label7.Visible = false;
             IngresosGridView.DataSource = dt1;
+            PromesasGridView.DataSource = dt2;
 
+            CantidadPromesasTextBox.Text = PromesasGridView.RowCount.ToString();
+            PromesasTextBox.Text = dt2.Compute("Sum(Balance)", "1=1").ToString();
             CantidadIngresosTextBox.Text = IngresosGridView.RowCount.ToString();
             IngresosTextBox.Text = dt1.Compute("Sum(Monto)", "1=1").ToString();
             RecolectarTextBox.Text = dt3.Rows[0]["MontoPendiente"].ToString();
+
             tabControl1.Visible = true;
             RecolectarTextBox.Visible = true;
             label6.Visible = true;
