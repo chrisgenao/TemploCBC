@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using BLL;
 
-//todo: Terminar Consultas (ingresos, promesas), Terminar rPersona(buscar) cPersona(consultar).
+//todo: Terminar Consultas (Balance General >> Promesas(clase))
 
 namespace CentroBiblicoCharis.Reportes
 {
