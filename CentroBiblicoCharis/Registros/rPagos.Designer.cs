@@ -227,6 +227,7 @@
             this.PagaraTextBox.Size = new System.Drawing.Size(100, 20);
             this.PagaraTextBox.TabIndex = 14;
             this.PagaraTextBox.TextChanged += new System.EventHandler(this.PagaraTextBox_TextChanged);
+            this.PagaraTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PagaraTextBox_KeyPress);
             // 
             // groupBox2
             // 
@@ -283,6 +284,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.PersonaComboBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "rPagos";
             this.Text = "Registro de Pagos";
             this.Load += new System.EventHandler(this.rPagos_Load);

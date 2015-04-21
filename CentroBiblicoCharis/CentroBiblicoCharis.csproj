@@ -22,6 +22,12 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.centrobiblicocharis.com/</SupportUrl>
+    <ErrorReportUrl>http://www.centrobiblicocharis.com/</ErrorReportUrl>
+    <TargetCulture>es-DO</TargetCulture>
+    <ProductName>Templo CBC</ProductName>
+    <PublisherName>Christopher Genao</PublisherName>
+    <SuiteName>CG Engineering</SuiteName>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
@@ -66,6 +72,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\cBalance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="Consultas\cPersonas.Designer.cs">
       <DependentUpon>cPersonas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\cUsuarios.Designer.cs">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginUI.cs">
       <SubType>Form</SubType>
@@ -121,18 +139,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>myDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ReporteTest1.cs">
+    <Compile Include="Reportes\Reportest.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ReporteTest1.rpt</DependentUpon>
+      <DependentUpon>Reportest.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilitarios.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cBalance.resx">
       <DependentUpon>cBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\cPersonas.resx">
       <DependentUpon>cPersonas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\cUsuarios.resx">
+      <DependentUpon>cUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginUI.resx">
       <DependentUpon>LoginUI.cs</DependentUpon>
@@ -148,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Registros\rPagos.resx">
       <DependentUpon>rPagos.cs</DependentUpon>
@@ -161,9 +186,9 @@
     <EmbeddedResource Include="Reportes\iPagos.resx">
       <DependentUpon>iPagos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReporteTest1.rpt">
+    <EmbeddedResource Include="Reportes\Reportest.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ReporteTest1.cs</LastGenOutput>
+      <LastGenOutput>Reportest.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -214,8 +239,28 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="SAP.CrystalReports14.NET.2.0">
+      <Visible>False</Visible>
+      <ProductName>SAP Crystal Reports Runtime Engine for .NET Framework</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Componentes\Imagenes\1429640459_Zoom.png" />
+    <Content Include="Componentes\Imagenes\1428604515_Key-24.png" />
+    <Content Include="Componentes\Imagenes\1428604619_Key-20.png" />
+    <Content Include="Componentes\Imagenes\1428604902_lock-20.png" />
+    <Content Include="Componentes\Imagenes\1428608936_supportmale-24.png" />
+    <Content Include="Componentes\Imagenes\1429580361_473782.ico" />
+    <Content Include="Componentes\Imagenes\1429580450_403019.ico" />
+    <Content Include="Componentes\Imagenes\1429580574_403017.ico" />
+    <Content Include="Componentes\Imagenes\1429580586_unknown-24.png" />
+    <Content Include="Componentes\Imagenes\1429588612_678134-sign-check-64.png" />
+    <Content Include="Componentes\Imagenes\1429590226_facebook-32.png" />
+    <Content Include="Componentes\Imagenes\1429590326_instagram-32.png" />
+    <Content Include="Componentes\Imagenes\1429590333_twitter-32.png" />
+    <Content Include="Componentes\Imagenes\526029_525604044131417_1811534463_n.ico" />
+    <Content Include="Componentes\Imagenes\Test.jpg" />
     <Content Include="Database\CentroBiblicoCharisDb.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -223,6 +268,17 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>CentroBiblicoCharisDb.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Test.jpg" />
+    <None Include="Resources\1429640459_Zoom.png" />
+    <None Include="Resources\1429590333_twitter-32.png" />
+    <None Include="Resources\1429590326_instagram-32.png" />
+    <None Include="Resources\1429590226_facebook-32.png" />
+    <None Include="Resources\1429588612_678134-sign-check-64.png" />
+    <None Include="Resources\1429580586_unknown-24.png" />
+    <None Include="Resources\1428608936_supportmale-24.png" />
+    <None Include="Resources\1428604902_lock-20.png" />
+    <None Include="Resources\1428604619_Key-20.png" />
+    <None Include="Resources\1428604515_Key-24.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -85,6 +85,11 @@ namespace BLL
             return Conexion.BuscarDb("Select " + campos + " from Etapas where " + Filtro);
         }
 
+        public DataTable ListarEtapa(string campos = "*", string Filtro = "1=1")
+        {
+            return Conexion.BuscarDb("Select " + campos + " from Etapas where IdEtapa = " + Filtro);
+        }
+
         public Boolean AfectarBalance(int IdEtapa, double ValorDisminuir)
         {
             ConexionDb Conexion = new ConexionDb();

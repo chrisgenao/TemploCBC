@@ -31,14 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.pagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.personaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.personaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.usuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.balanceGeneralToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desconectarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +50,9 @@
             this.UsuarioStrip = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.NivelStrip = new System.Windows.Forms.ToolStripStatusLabel();
-            this.personaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.FBButton = new System.Windows.Forms.Button();
+            this.TWButton = new System.Windows.Forms.Button();
+            this.IGButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -81,20 +82,6 @@
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
             // 
-            // personaToolStripMenuItem
-            // 
-            this.personaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personaToolStripMenuItem.Image")));
-            this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
-            this.personaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.personaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
-            this.personaToolStripMenuItem.Text = "Persona";
-            this.personaToolStripMenuItem.Click += new System.EventHandler(this.personaToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(180, 6);
-            // 
             // pagoToolStripMenuItem
             // 
             this.pagoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("pagoToolStripMenuItem.Image")));
@@ -104,25 +91,37 @@
             this.pagoToolStripMenuItem.Text = "Aporte";
             this.pagoToolStripMenuItem.Click += new System.EventHandler(this.pagoToolStripMenuItem_Click);
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(154, 6);
+            // 
+            // personaToolStripMenuItem
+            // 
+            this.personaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("personaToolStripMenuItem.Image")));
+            this.personaToolStripMenuItem.Name = "personaToolStripMenuItem";
+            this.personaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.personaToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
+            this.personaToolStripMenuItem.Text = "Persona";
+            this.personaToolStripMenuItem.Click += new System.EventHandler(this.personaToolStripMenuItem_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(180, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(154, 6);
             // 
             // usuarioToolStripMenuItem
             // 
             this.usuarioToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("usuarioToolStripMenuItem.Image")));
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
             this.usuarioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.U)));
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             this.usuarioToolStripMenuItem.Click += new System.EventHandler(this.usuarioToolStripMenuItem_Click);
             // 
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pagoToolStripMenuItem1,
-            this.toolStripSeparator3,
             this.personaToolStripMenuItem1,
             this.toolStripSeparator4,
             this.usuarioToolStripMenuItem1,
@@ -132,6 +131,21 @@
             this.consultarToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.consultarToolStripMenuItem.Text = "Consulta";
             // 
+            // personaToolStripMenuItem1
+            // 
+            this.personaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("personaToolStripMenuItem1.Image")));
+            this.personaToolStripMenuItem1.Name = "personaToolStripMenuItem1";
+            this.personaToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
+            | System.Windows.Forms.Keys.P)));
+            this.personaToolStripMenuItem1.Size = new System.Drawing.Size(222, 22);
+            this.personaToolStripMenuItem1.Text = "Persona";
+            this.personaToolStripMenuItem1.Click += new System.EventHandler(this.personaToolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(219, 6);
+            // 
             // usuarioToolStripMenuItem1
             // 
             this.usuarioToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("usuarioToolStripMenuItem1.Image")));
@@ -140,15 +154,12 @@
             | System.Windows.Forms.Keys.U)));
             this.usuarioToolStripMenuItem1.Size = new System.Drawing.Size(222, 22);
             this.usuarioToolStripMenuItem1.Text = "Usuario";
+            this.usuarioToolStripMenuItem1.Click += new System.EventHandler(this.usuarioToolStripMenuItem1_Click);
             // 
-            // pagoToolStripMenuItem1
+            // toolStripSeparator5
             // 
-            this.pagoToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("pagoToolStripMenuItem1.Image")));
-            this.pagoToolStripMenuItem1.Name = "pagoToolStripMenuItem1";
-            this.pagoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.A)));
-            this.pagoToolStripMenuItem1.Size = new System.Drawing.Size(222, 22);
-            this.pagoToolStripMenuItem1.Text = "Aporte";
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(219, 6);
             // 
             // balanceGeneralToolStripMenuItem
             // 
@@ -163,8 +174,9 @@
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.ayudaToolStripMenuItem.Text = "About";
+            this.ayudaToolStripMenuItem.Click += new System.EventHandler(this.ayudaToolStripMenuItem_Click);
             // 
             // desconectarToolStripMenuItem
             // 
@@ -219,30 +231,35 @@
             this.NivelStrip.Size = new System.Drawing.Size(118, 17);
             this.NivelStrip.Text = "toolStripStatusLabel3";
             // 
-            // personaToolStripMenuItem1
+            // FBButton
             // 
-            this.personaToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("personaToolStripMenuItem1.Image")));
-            this.personaToolStripMenuItem1.Name = "personaToolStripMenuItem1";
-            this.personaToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Alt) 
-            | System.Windows.Forms.Keys.P)));
-            this.personaToolStripMenuItem1.Size = new System.Drawing.Size(222, 22);
-            this.personaToolStripMenuItem1.Text = "Persona";
-            this.personaToolStripMenuItem1.Click += new System.EventHandler(this.personaToolStripMenuItem1_Click);
+            this.FBButton.Image = ((System.Drawing.Image)(resources.GetObject("FBButton.Image")));
+            this.FBButton.Location = new System.Drawing.Point(681, 27);
+            this.FBButton.Name = "FBButton";
+            this.FBButton.Size = new System.Drawing.Size(49, 42);
+            this.FBButton.TabIndex = 2;
+            this.FBButton.UseVisualStyleBackColor = true;
+            this.FBButton.Click += new System.EventHandler(this.FBButton_Click);
             // 
-            // toolStripSeparator3
+            // TWButton
             // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(219, 6);
+            this.TWButton.Image = ((System.Drawing.Image)(resources.GetObject("TWButton.Image")));
+            this.TWButton.Location = new System.Drawing.Point(681, 75);
+            this.TWButton.Name = "TWButton";
+            this.TWButton.Size = new System.Drawing.Size(49, 42);
+            this.TWButton.TabIndex = 3;
+            this.TWButton.UseVisualStyleBackColor = true;
+            this.TWButton.Click += new System.EventHandler(this.TWButton_Click);
             // 
-            // toolStripSeparator4
+            // IGButton
             // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(219, 6);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(219, 6);
+            this.IGButton.Image = ((System.Drawing.Image)(resources.GetObject("IGButton.Image")));
+            this.IGButton.Location = new System.Drawing.Point(681, 123);
+            this.IGButton.Name = "IGButton";
+            this.IGButton.Size = new System.Drawing.Size(49, 42);
+            this.IGButton.TabIndex = 4;
+            this.IGButton.UseVisualStyleBackColor = true;
+            this.IGButton.Click += new System.EventHandler(this.IGButton_Click);
             // 
             // MainWindow
             // 
@@ -251,8 +268,12 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(742, 346);
+            this.Controls.Add(this.IGButton);
+            this.Controls.Add(this.TWButton);
+            this.Controls.Add(this.FBButton);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "Templo CBC";
@@ -282,14 +303,15 @@
         private System.Windows.Forms.ToolStripStatusLabel NivelStrip;
         private System.Windows.Forms.ToolStripMenuItem pagoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pagoToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem balanceGeneralToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem personaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem personaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.Button FBButton;
+        private System.Windows.Forms.Button TWButton;
+        private System.Windows.Forms.Button IGButton;
     }
 }

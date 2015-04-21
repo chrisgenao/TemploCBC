@@ -19,6 +19,7 @@ namespace CentroBiblicoCharis.Registros
         private Etapas Etapa = new Etapas();
         private Pagos Pago = new Pagos();
         private Reportes.iPagos iPago = new Reportes.iPagos();
+        private Ingresos Ingreso = new Ingresos();
 
         DataTable dt = new DataTable();
         public rPagos()
@@ -87,7 +88,7 @@ namespace CentroBiblicoCharis.Registros
                 paso = true;
                 Persona.ModificarPago(Convert.ToInt32(IDTextBox.Text));
                 Pago.Insertar(Convert.ToInt32(IDTextBox.Text),NombreTextBox.Text,Convert.ToInt32(PagaraTextBox.Text), Persona.Balance);
-
+                Ingreso.Insertar(Convert.ToInt32(IDTextBox.Text), NombreTextBox.Text, Convert.ToInt32(PagaraTextBox.Text));
             }
             if (paso)
             {
@@ -99,7 +100,6 @@ namespace CentroBiblicoCharis.Registros
                 ActualizarComboBox();
                 MessageBox.Show("Pago Realizado, Procederemos a Imprimir.");
                 iPago.ShowDialog();
-                //todo: Imprimir Factura.
             }
             else
             {
@@ -130,28 +130,22 @@ namespace CentroBiblicoCharis.Registros
             PersonaComboBox.DisplayMember = "Nombre";
         }
 
-        private void ImprimirDocumento()
-        {
-     //  CrystalDecisions.Shared.ParameterValues RpDatos;
-     //  CrystalDecisions.Shared.ParameterDiscreteValue DsFecha; 
-     //  CrystalDecisions.Shared.ParameterDiscreteValue DsNombre;
-
-       // DsFecha.Value = DateTime.Today;
-       // DsNombre.Value = NombreTextBox.Text.ToString();
-       //
-       // RpDatos.Add(DsFecha);
-       // Reportes.CrystalReport1.DataDefinition.ParameterFields("ParametroFecha").ApplyCurrentValues(RpDatos);
-        //RpDatos.Clear();
-        
-    //    RpDatos.Add(DsNombre)
-    //    MyReport.DataDefinition.ParameterFields("ParametroNombre").ApplyCurrentValues(RpDatos)
-    //    RpDatos.Clear()
-
-        }
 
         private void PagaraTextBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void PagaraTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8)
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

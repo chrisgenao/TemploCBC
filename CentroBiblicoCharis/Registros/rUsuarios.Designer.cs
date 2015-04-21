@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(rUsuarios));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,27 +37,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.NivelComboBox = new System.Windows.Forms.ComboBox();
+            this.MailTextBox = new System.Windows.Forms.TextBox();
+            this.UsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.PWTextBox = new System.Windows.Forms.TextBox();
+            this.PW2TextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ApellidoTextBox = new System.Windows.Forms.TextBox();
+            this.NombreTextBox = new System.Windows.Forms.TextBox();
+            this.IDTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.GuardarButton = new System.Windows.Forms.Button();
+            this.BuscarButton = new System.Windows.Forms.Button();
+            this.BorrarButton = new System.Windows.Forms.Button();
+            this.LimpiarButton = new System.Windows.Forms.Button();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -124,11 +125,11 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.NivelComboBox);
+            this.groupBox1.Controls.Add(this.MailTextBox);
+            this.groupBox1.Controls.Add(this.UsuarioTextBox);
+            this.groupBox1.Controls.Add(this.PWTextBox);
+            this.groupBox1.Controls.Add(this.PW2TextBox);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label6);
@@ -141,70 +142,98 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Credenciales";
             // 
+            // NivelComboBox
+            // 
+            this.NivelComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.NivelComboBox.FormattingEnabled = true;
+            this.NivelComboBox.Items.AddRange(new object[] {
+            "0",
+            "1"});
+            this.NivelComboBox.Location = new System.Drawing.Point(149, 124);
+            this.NivelComboBox.Name = "NivelComboBox";
+            this.NivelComboBox.Size = new System.Drawing.Size(56, 21);
+            this.NivelComboBox.TabIndex = 13;
+            // 
+            // MailTextBox
+            // 
+            this.MailTextBox.Location = new System.Drawing.Point(149, 100);
+            this.MailTextBox.MaxLength = 30;
+            this.MailTextBox.Name = "MailTextBox";
+            this.MailTextBox.Size = new System.Drawing.Size(162, 20);
+            this.MailTextBox.TabIndex = 12;
+            this.MailTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MailTextBox_KeyPress);
+            // 
+            // UsuarioTextBox
+            // 
+            this.UsuarioTextBox.Location = new System.Drawing.Point(149, 19);
+            this.UsuarioTextBox.MaxLength = 10;
+            this.UsuarioTextBox.Name = "UsuarioTextBox";
+            this.UsuarioTextBox.Size = new System.Drawing.Size(162, 20);
+            this.UsuarioTextBox.TabIndex = 11;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioTextBox_KeyPress);
+            // 
+            // PWTextBox
+            // 
+            this.PWTextBox.Location = new System.Drawing.Point(149, 48);
+            this.PWTextBox.MaxLength = 15;
+            this.PWTextBox.Name = "PWTextBox";
+            this.PWTextBox.PasswordChar = '*';
+            this.PWTextBox.Size = new System.Drawing.Size(162, 20);
+            this.PWTextBox.TabIndex = 10;
+            this.PWTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PWTextBox_KeyPress);
+            // 
+            // PW2TextBox
+            // 
+            this.PW2TextBox.Location = new System.Drawing.Point(149, 75);
+            this.PW2TextBox.MaxLength = 15;
+            this.PW2TextBox.Name = "PW2TextBox";
+            this.PW2TextBox.PasswordChar = '*';
+            this.PW2TextBox.Size = new System.Drawing.Size(162, 20);
+            this.PW2TextBox.TabIndex = 9;
+            this.PW2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PW2TextBox_KeyPress);
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.maskedTextBox1);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.ApellidoTextBox);
+            this.groupBox2.Controls.Add(this.NombreTextBox);
+            this.groupBox2.Controls.Add(this.IDTextBox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.BuscarButton);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(343, 129);
+            this.groupBox2.Size = new System.Drawing.Size(343, 97);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Informacion";
             // 
-            // label4
+            // ApellidoTextBox
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Numero:";
+            this.ApellidoTextBox.Location = new System.Drawing.Point(149, 68);
+            this.ApellidoTextBox.MaxLength = 25;
+            this.ApellidoTextBox.Name = "ApellidoTextBox";
+            this.ApellidoTextBox.Size = new System.Drawing.Size(162, 20);
+            this.ApellidoTextBox.TabIndex = 17;
+            this.ApellidoTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ApellidoTextBox_KeyPress);
             // 
-            // button1
+            // NombreTextBox
             // 
-            this.button1.Location = new System.Drawing.Point(59, 306);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(76, 32);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Limpiar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.NombreTextBox.Location = new System.Drawing.Point(149, 44);
+            this.NombreTextBox.MaxLength = 25;
+            this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.Size = new System.Drawing.Size(162, 20);
+            this.NombreTextBox.TabIndex = 16;
+            this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
-            // button2
+            // IDTextBox
             // 
-            this.button2.Location = new System.Drawing.Point(141, 306);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 32);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "Guardar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(222, 306);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 32);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Borrar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(215, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(34, 27);
-            this.button4.TabIndex = 13;
-            this.button4.UseVisualStyleBackColor = true;
+            this.IDTextBox.Location = new System.Drawing.Point(149, 19);
+            this.IDTextBox.MaxLength = 2;
+            this.IDTextBox.Name = "IDTextBox";
+            this.IDTextBox.Size = new System.Drawing.Size(55, 20);
+            this.IDTextBox.TabIndex = 15;
+            this.IDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDTextBox_KeyPress);
             // 
             // label9
             // 
@@ -215,91 +244,82 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "ID:";
             // 
-            // textBox1
+            // errorProvider1
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 20);
-            this.textBox1.TabIndex = 15;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // textBox2
+            // GuardarButton
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 44);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(162, 20);
-            this.textBox2.TabIndex = 16;
+            this.GuardarButton.Image = ((System.Drawing.Image)(resources.GetObject("GuardarButton.Image")));
+            this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.GuardarButton.Location = new System.Drawing.Point(145, 308);
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Size = new System.Drawing.Size(75, 34);
+            this.GuardarButton.TabIndex = 20;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
             // 
-            // textBox3
+            // BuscarButton
             // 
-            this.textBox3.Location = new System.Drawing.Point(149, 68);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(162, 20);
-            this.textBox3.TabIndex = 17;
+            this.BuscarButton.Image = global::CentroBiblicoCharis.Properties.Resources._1429640459_Zoom;
+            this.BuscarButton.Location = new System.Drawing.Point(215, 15);
+            this.BuscarButton.Name = "BuscarButton";
+            this.BuscarButton.Size = new System.Drawing.Size(34, 27);
+            this.BuscarButton.TabIndex = 13;
+            this.BuscarButton.UseVisualStyleBackColor = true;
+            this.BuscarButton.Click += new System.EventHandler(this.BuscarButton_Click);
             // 
-            // maskedTextBox1
+            // BorrarButton
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(149, 94);
-            this.maskedTextBox1.Mask = "(999)000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 18;
+            this.BorrarButton.Image = ((System.Drawing.Image)(resources.GetObject("BorrarButton.Image")));
+            this.BorrarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BorrarButton.Location = new System.Drawing.Point(226, 308);
+            this.BorrarButton.Name = "BorrarButton";
+            this.BorrarButton.Size = new System.Drawing.Size(75, 34);
+            this.BorrarButton.TabIndex = 19;
+            this.BorrarButton.Text = "Borrar";
+            this.BorrarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BorrarButton.UseVisualStyleBackColor = true;
+            this.BorrarButton.Click += new System.EventHandler(this.BorrarButton_Click);
             // 
-            // textBox5
+            // LimpiarButton
             // 
-            this.textBox5.Location = new System.Drawing.Point(149, 75);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(162, 20);
-            this.textBox5.TabIndex = 9;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(149, 48);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(162, 20);
-            this.textBox6.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(149, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 20);
-            this.textBox4.TabIndex = 11;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(149, 100);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(162, 20);
-            this.textBox7.TabIndex = 12;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 124);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(56, 21);
-            this.comboBox1.TabIndex = 13;
+            this.LimpiarButton.Image = ((System.Drawing.Image)(resources.GetObject("LimpiarButton.Image")));
+            this.LimpiarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LimpiarButton.Location = new System.Drawing.Point(64, 308);
+            this.LimpiarButton.Name = "LimpiarButton";
+            this.LimpiarButton.Size = new System.Drawing.Size(75, 34);
+            this.LimpiarButton.TabIndex = 18;
+            this.LimpiarButton.Text = "Limpiar";
+            this.LimpiarButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.LimpiarButton.UseVisualStyleBackColor = true;
+            this.LimpiarButton.Click += new System.EventHandler(this.LimpiarButton_Click);
             // 
             // rUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(367, 354);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.GuardarButton);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.BorrarButton);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.LimpiarButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rUsuarios";
             this.Text = "Registro de Usuarios";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.Load += new System.EventHandler(this.rUsuarios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -315,21 +335,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox PWTextBox;
+        private System.Windows.Forms.TextBox PW2TextBox;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox ApellidoTextBox;
+        private System.Windows.Forms.TextBox NombreTextBox;
+        private System.Windows.Forms.TextBox IDTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Button BuscarButton;
+        private System.Windows.Forms.ComboBox NivelComboBox;
+        private System.Windows.Forms.TextBox MailTextBox;
+        private System.Windows.Forms.TextBox UsuarioTextBox;
+        private System.Windows.Forms.Button GuardarButton;
+        private System.Windows.Forms.Button BorrarButton;
+        private System.Windows.Forms.Button LimpiarButton;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

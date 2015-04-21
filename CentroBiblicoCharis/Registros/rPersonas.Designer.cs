@@ -218,16 +218,20 @@
             // NombreTextBox
             // 
             this.NombreTextBox.Location = new System.Drawing.Point(140, 41);
+            this.NombreTextBox.MaxLength = 40;
             this.NombreTextBox.Name = "NombreTextBox";
             this.NombreTextBox.Size = new System.Drawing.Size(126, 20);
             this.NombreTextBox.TabIndex = 11;
+            this.NombreTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NombreTextBox_KeyPress);
             // 
             // IDTextBox
             // 
             this.IDTextBox.Location = new System.Drawing.Point(140, 14);
+            this.IDTextBox.MaxLength = 3;
             this.IDTextBox.Name = "IDTextBox";
             this.IDTextBox.Size = new System.Drawing.Size(43, 20);
             this.IDTextBox.TabIndex = 10;
+            this.IDTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.IDTextBox_KeyPress);
             // 
             // LimpiarButton
             // 
@@ -300,10 +304,10 @@
             this.Controls.Add(this.LimpiarButton);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "rPersonas";
-            this.ShowIcon = false;
             this.Text = "Registro de Persona";
             this.Load += new System.EventHandler(this.rPersonas_Load);
             this.groupBox1.ResumeLayout(false);

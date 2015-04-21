@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using System.Diagnostics;
 
 namespace CentroBiblicoCharis
 {
@@ -28,6 +29,8 @@ namespace CentroBiblicoCharis
             {
                 usuarioToolStripMenuItem.Visible = false;
                 toolStripSeparator2.Visible = false;
+                toolStripSeparator5.Visible = false;
+                usuarioToolStripMenuItem1.Visible = false;
             }
             NombreStrip.Text = Usuario.Nombre.ToString() +" "+ Usuario.Apellido.ToString();
             UsuarioStrip.Text = "("+Usuario.Usuario.ToString() + ")";
@@ -77,6 +80,37 @@ namespace CentroBiblicoCharis
         {
             Consultas.cPersonas cPersona = new Consultas.cPersonas();
             cPersona.ShowDialog();
+        }
+
+        private void ayudaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox AB = new AboutBox();
+            AB.ShowDialog();
+        }
+
+        private void FBButton_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://www.facebook.com/iglesiacharis");
+            Process.Start(sInfo);
+        }
+
+        private void TWButton_Click(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("Coming Soon.");
+           // ProcessStartInfo sInfo = new ProcessStartInfo("https://www.facebook.com/iglesiacharis");
+           // Process.Start(sInfo);
+        }
+
+        private void IGButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Coming Soon.");
+        }
+
+        private void usuarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Consultas.cUsuarios cUsuario = new Consultas.cUsuarios();
+            cUsuario.ShowDialog();
         }
     }
 }

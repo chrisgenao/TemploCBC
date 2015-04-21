@@ -116,9 +116,34 @@ namespace CentroBiblicoCharis.Consultas
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BuscarPorTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar) || e.KeyChar == 8 || char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void AceptarButton_Click(object sender, EventArgs e)
+        {
+            int index;
+
+            index = PersonaGridView.CurrentRow.Index;
+
+            datoEncontrado = (int)PersonaGridView.CurrentRow.Cells["IdPersona"].Value;
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }

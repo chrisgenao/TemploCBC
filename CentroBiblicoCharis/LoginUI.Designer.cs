@@ -69,6 +69,7 @@
             this.UsuarioTextBox.Name = "UsuarioTextBox";
             this.UsuarioTextBox.Size = new System.Drawing.Size(134, 20);
             this.UsuarioTextBox.TabIndex = 2;
+            this.UsuarioTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UsuarioTextBox_KeyPress);
             // 
             // PasswordTextBox
             // 
@@ -78,6 +79,7 @@
             this.PasswordTextBox.PasswordChar = '*';
             this.PasswordTextBox.Size = new System.Drawing.Size(134, 20);
             this.PasswordTextBox.TabIndex = 3;
+            this.PasswordTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PasswordTextBox_KeyPress);
             // 
             // AccederButton
             // 
@@ -104,6 +106,7 @@
             // 
             // CancelarButton
             // 
+            this.CancelarButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.CancelarButton.Image = ((System.Drawing.Image)(resources.GetObject("CancelarButton.Image")));
             this.CancelarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.CancelarButton.Location = new System.Drawing.Point(231, 249);

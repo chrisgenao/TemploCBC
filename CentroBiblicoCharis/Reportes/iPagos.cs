@@ -10,15 +10,12 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using BLL;
 
-//todo: Terminar Consultas (ingresos, promesas) tablas e lo demas.
+//todo: Terminar Consultas (ingresos, promesas), Terminar rPersona(buscar) cPersona(consultar).
 
 namespace CentroBiblicoCharis.Reportes
 {
     public partial class iPagos : Form
     {
-        private Pagos Pago = new Pagos();
-
-        
         public iPagos()
         {
             InitializeComponent();
@@ -26,7 +23,7 @@ namespace CentroBiblicoCharis.Reportes
 
         private void iPagos_Load(object sender, EventArgs e)
         {
-            Reportes1.Refresh();
+            Reportest1.Refresh();
         }
     }
 }
